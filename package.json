@@ -1,0 +1,23 @@
+{
+  "name": "proyectorrhh",
+  "version": "1.0.0",
+  "description": "An HR project using express.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HR",
+    "nodejs"
+  ],
+  "author": "Erick Díaz, Zahid Hernandez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.1"
+  }
+}
