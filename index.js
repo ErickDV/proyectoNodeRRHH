@@ -8,11 +8,12 @@ const user = require('./routes/user');
 const employee = require('./routes/employee');
 
 //Middleware
+const cors = require('./middleware/cors');
 const auth = require('./middleware/auth');
 const index = require('./middleware/index');
 const notFound = require('./middleware/notFound');
 
-
+app.use(cors);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
