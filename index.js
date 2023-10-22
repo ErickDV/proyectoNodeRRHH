@@ -5,6 +5,7 @@ const app = express();
 
 //Routers
 const user = require('./routes/user');
+const employee = require('./routes/employee');
 
 //Middleware
 const auth = require('./middleware/auth');
