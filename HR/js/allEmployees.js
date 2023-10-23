@@ -49,11 +49,10 @@ function displayEmployees(mply){
             <td>
                 <div class="centerBTN">
                     <div class="btn-block">
-                    <button class="update" onclick="localStorage.setItem('employeeId', '${mply[i].employee_id}'); window.location.href='updateEmployee.html'">Editar</button>
-
+                        <button class="update" onclick="localStorage.setItem('employeeId', '${mply[i].employee_id}'); window.location.href='updateEmployee.html'">Editar</button>
                     </div>
                     <div class="btn-block">
-                        <button class="delete" >Eliminar</button>
+                    <button class="delete" onclick="localStorage.setItem('employeeId', '${mply[i].employee_id}'); window.location.href='deleteEmployee.html'">Eliminar</button>
                     </div>
                 </div>
             </td>
