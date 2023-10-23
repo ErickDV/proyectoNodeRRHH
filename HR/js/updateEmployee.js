@@ -1,7 +1,7 @@
 window.onload = init;
 var headers = {};
 var url = "http://localhost:3000/employee/";
-var id = 1;
+var id = localStorage.getItem('employeeId');
 
 function init() {
     if(localStorage.getItem("token")){
@@ -12,6 +12,7 @@ function init() {
         }
 
         document.querySelector('.exit').addEventListener('click', function() {
+            localStorage.removeItem('employeeId');
             window.location.href = "allEmployees.html"
         });
         
@@ -72,6 +73,7 @@ function updateEmployee() {
         }
     }).then(function(res) {
         console.log(res);
+        localStorage.removeItem('employeeId');
         alert("Modificación exitosa");
         window.location.href = "allEmployees.html";
     }).catch(function(err){

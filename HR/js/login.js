@@ -21,7 +21,7 @@ function login() {
         if(res.data.code === 200){
             //alert("Inicio exitoso.")
             localStorage.setItem("token", res.data.message);
-            window.location.href = "addEmployee.html";
+            window.location.href = "allEmployees.html";
         }
         else{
             alert("Usuario y/o contraseña incorrectos.")

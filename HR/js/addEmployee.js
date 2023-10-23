@@ -3,11 +3,6 @@ var headers = {};
 
 function init() {
     if(localStorage.getItem("token")){
-        headers = {
-            headers: {
-                'Authorization': "bearer " + localStorage.getItem("token")
-            }
-        }
         document.querySelector('.exit').addEventListener('click', function() {
             window.location.href = "allEmployees.html"
         });
@@ -37,7 +32,9 @@ function addEmployee() {
             mply_phone: phone,
             mply_mail: email,
             mply_address: address
-        }
+        },headers: {
+                'Authorization': "Bearer " + localStorage.getItem("token")
+            }
     }).then(function(res) {
         console.log(res);
         alert("Registro exitoso");

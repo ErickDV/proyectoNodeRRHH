@@ -2,6 +2,12 @@ const express = require('express');
 const employee = express.Router();
 const db = require('../config/database');
 
+//Obtener todos los empleados
+employee.get("/", async (req,res,next) => {
+    const mply = await db.query("SELECT * FROM employee");
+    return res.status(200).json({code:200,message:mply});
+});
+
 //Agregar empleado
 employee.post("/alta", async (req, res, next) => {
     const {mply_name,mply_lastname, mply_phone, mply_mail,mply_address} = req.body;
