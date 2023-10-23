@@ -18,6 +18,26 @@ function init(){
             window.location.href = "index.html"
         });
 
+        document.getElementById('search-button').addEventListener('click', function() {
+            var name = document.getElementById('search-name').value;
+            axios({
+                method: 'get',
+                url: url + 'buscar',
+                params: {
+                    mply_name: name
+                },
+                headers: {
+                    'Authorization': "Bearer " + localStorage.getItem("token")
+                }
+            }).then(function(res) {
+                console.log(res);
+                displayEmployees(res.data.message);
+            }).catch(function(err){
+                console.log(err);
+            })
+        });
+        
+
         loadEmployees();
     }else{
         window.location.href = "index.html";
@@ -36,6 +56,7 @@ function loadEmployees() {
 
 function displayEmployees(mply){
     var table = document.querySelector("table");
+    table.innerHTML = ""; // Borra el contenido de la tabla
     console.log(mply);
     for(var i = 0; i < mply.length; i++){
         table.innerHTML += `

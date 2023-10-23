@@ -55,7 +55,7 @@ employee.delete("/eliminar", async (req, res, next) => {
 
 //Buscar empleado por nombre
 employee.get("/buscar", async (req, res, next) => {
-    const {mply_name} = req.body;
+    const {mply_name} = req.query;
     if(mply_name){
         const rows = await db.query(`SELECT * FROM employee WHERE employee_name = '${mply_name}'`);
         return res.status(201).json({code: 201, message: rows});
@@ -63,6 +63,7 @@ employee.get("/buscar", async (req, res, next) => {
     }
     return res.status(500).json({code: 500, message: 'campos incompletos'});
 });
+
 
 //Buscar por ID
 employee.get('/:id([0-9]{1,3})', async (req,res,next) => {
