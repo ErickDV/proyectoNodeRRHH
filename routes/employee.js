@@ -19,7 +19,7 @@ employee.post("/alta", async (req, res, next) => {
 });
 
 //Modificar empleado
-employee.post("/modificar", async (req, res, next) => {
+employee.patch("/modificar", async (req, res, next) => {
     const {mply_id, mply_name,mply_lastname, mply_phone, mply_mail,mply_address} = req.body;
     if(mply_id && mply_name,mply_lastname && mply_phone && mply_mail && mply_address){
         let query = `UPDATE employee SET employee_name = '${mply_name}', employee_surnames = '${mply_lastname}', `;
@@ -35,7 +35,7 @@ employee.post("/modificar", async (req, res, next) => {
 });
 
 //Eliminar empleado
-employee.post("/eliminar", async (req, res, next) => {
+employee.delete("/eliminar", async (req, res, next) => {
     const {mply_id} = req.body;
     if(mply_id){
         const rows = await db.query(`DELETE FROM employee WHERE employee_id = ${mply_id}`);
@@ -56,6 +56,21 @@ employee.get("/buscar", async (req, res, next) => {
         //return res.status(500).json({code: 500, message: 'no se encuentra al empleado'})
     }
     return res.status(500).json({code: 500, message: 'campos incompletos'});
+});
+
+//Buscar por ID
+employee.get('/:id([0-9]{1,3})', async (req,res,next) => {
+    const id = req.params.id;
+    try {
+        const mply = await db.query("SELECT * FROM employee WHERE employee_id = ?", [id]);
+        if(mply.length == 1){
+            return res.status(200).json({code:200,message:mply});
+        }
+        return res.status(404).json({code:404,message:"Empleado no encontrado."});
+    } catch(err) {
+        console.error(err);
+        return res.status(500).json({code:500, message:"Error interno del servidor."});
+    }
 });
 
 
