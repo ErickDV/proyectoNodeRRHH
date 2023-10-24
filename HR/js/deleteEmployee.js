@@ -36,7 +36,6 @@ function loadDeleteEmployee() {
 }
 
 function displayEmployee(employee){
-    console.log(employee)
     document.getElementById('input-id').value = employee[0].employee_id;
     document.getElementById('input-name').value = employee[0].employee_name;
     document.getElementById('input-lastname').value = employee[0].employee_surnames;
@@ -54,8 +53,6 @@ function deleteEmployee() {
     var phone = document.getElementById('input-phone').value;
     var email = document.getElementById('input-email').value;
     var address = document.getElementById('input-address').value;
-
-    console.log(id, name, lastname, phone, email, address);
 
     axios({
         method: 'delete',

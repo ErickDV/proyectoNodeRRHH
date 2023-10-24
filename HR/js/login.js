@@ -8,8 +8,6 @@ function login() {
     var mail = document.getElementById('input-mail').value;
     var pass = document.getElementById('input-password').value;
 
-    console.log(mail, pass);
-
     axios({
         method: 'post',
         url: 'http://localhost:3000/user/login',

@@ -8,7 +8,6 @@ function init() {
         });
         
         document.querySelector('.send').addEventListener('click',addEmployee);   
-        console.log("prueba")
     }else{
         window.location.href = "login.html";
     }
@@ -20,8 +19,6 @@ function addEmployee() {
     var phone = document.getElementById('input-phone').value;
     var email = document.getElementById('input-email').value;
     var address = document.getElementById('input-address').value;
-
-    console.log(name, lastname, phone, email, address);
 
     axios({
         method: 'post',

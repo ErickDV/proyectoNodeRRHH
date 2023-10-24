@@ -5,7 +5,6 @@
     <title>Todos los empleados</title>
     <link rel="stylesheet" href="./css/styleTable.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
-    <script src="./js/updateEmployee.js"></script>
     <script src="./js/allEmployees.js"></script>
   </head>
   <body>
@@ -24,21 +23,13 @@
           </div>
         <div class="center">
           <input type="text" id="search-name" placeholder="Ingresa el nombre del empleado">
-          <button id="search-button">Buscar</button>
+          <button id="search-button" class="top-btn">Buscar</button>
+          <button id="clean-button" class="top-btn">Limpiar</button>
         </div>
-        <div class="item">
-          <div>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Dirección</th>
-                    <th>Accion</th>
-                </tr>
-            </table> 
+        <div class="item" id="container">
+          <table>
+            
+          </table>
         </div>
       </div>
     </div>

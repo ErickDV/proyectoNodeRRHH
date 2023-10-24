@@ -18,6 +18,11 @@ function init(){
             window.location.href = "index.html"
         });
 
+        document.getElementById('clean-button').addEventListener('click', function() {
+            document.getElementById('search-name').value = '';
+            init();
+        });
+
         document.getElementById('search-button').addEventListener('click', function() {
             var name = document.getElementById('search-name').value;
             axios({
@@ -57,9 +62,26 @@ function loadEmployees() {
 function displayEmployees(mply){
     var table = document.querySelector("table");
     table.innerHTML = ""; // Borra el contenido de la tabla
-    console.log(mply);
+    var item = document.getElementById("container");
+    item.innerHTML = `
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>`;
+    var tbody = document.querySelector("#tableBody");
     for(var i = 0; i < mply.length; i++){
-        table.innerHTML += `
+        tbody.innerHTML += `
         <tr>
             <td>${mply[i].employee_id}</td>
             <td>${mply[i].employee_name}</td>

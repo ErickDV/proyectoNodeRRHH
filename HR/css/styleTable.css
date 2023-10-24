@@ -119,12 +119,12 @@ width: 100%;
 }
 
 td, th {
-border: 1px solid #dddddd;
+border: 1px solid #9b9b9b;
 text-align: left;
-padding: 8px;
+padding:0px 8px;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
 background-color: #dddddd;
 }
 
@@ -152,4 +152,16 @@ cursor: pointer;
 }
 .delete:hover{
     background-color:rgb(196, 0, 0);
+}
+.add{
+    background-color: darkgreen;
+}
+.add:hover{
+    background-color: rgb(0, 134, 0);
+}
+
+.top-btn{
+    margin-left: 10px;
+    width: 90px;
+    height: 37px;
 }
