@@ -11,7 +11,7 @@ Hernandez Garcia Carlos Zahid - 307077
 ### Buscar empleado
 ![Buscar empleado](/Screenshots/searchEmployee.png)
 ### Agregar empleado
-![Agregar empleado](/Screenshots/searchEmployee.png)
+![Agregar empleado](/Screenshots/addEmployee.png)
 ### Editar empleado
 ![Editar empleado](/Screenshots/updateEmployee.png)
 ### Eliminar empleado
